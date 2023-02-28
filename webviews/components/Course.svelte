@@ -3,9 +3,12 @@ export let course;
 
 import { onMount } from "svelte";
 import { api_key } from "../../src/stores";
+import Gradeable from "./Gradeable.svelte";
 
 var gradeables;
 var gradeable_titles = [];
+
+let selected;
 
 onMount(async () => {
 
@@ -39,18 +42,31 @@ onMount(async () => {
 		})
 		.catch(error => console.log('error', error));
 
+	selected = gradeable_titles[0];
+
 });
 
 
 
 </script>
 
+<select bind:value={selected}>
+	{#each gradeable_titles as title}
+		<option value={title}>
+			{title}
+		</option>
+	{/each}
+</select>
+
+{#key selected}
+	<Gradeable gradeable={selected}/>
+{/key}
 
 
-<ul>
+<!-- <ul>
 	{#each gradeable_titles as title}
 		<li>
 			{title}
 		</li>
 	{/each}
-</ul>
+</ul> -->
