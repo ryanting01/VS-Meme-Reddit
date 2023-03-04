@@ -1,14 +1,8 @@
 {
   "version": 3,
   "file": "sidebar.css",
-  "sources": [
-    "Indicator.svelte",
-    "Thumbnail.svelte"
-  ],
-  "sourcesContent": [
-    "<script>export let name = '';\nexport let selected = false;\nexport let indicatorClass = '';\n</script>\n\n<button type=\"button\" class={indicatorClass} class:active={selected} aria-label={name} on:click />\n\n<style>\n  .active {\n    opacity: 1;\n  }</style>\n",
-    "<script>export let thumbImg = '';\nexport let altTag = '';\nexport let titleLink = '';\nexport let id;\nexport let thumbWidth;\nexport let selected = false;\n</script>\n\n<!-- svelte-ignore a11y-click-events-have-key-events -->\n<img\n  class=\"opacity-40\"\n  class:active={selected}\n  id={id.toString()}\n  src={thumbImg}\n  alt={altTag}\n  title=\"Image from {titleLink}\"\n  on:click\n  width=\"{thumbWidth}%\" />\n\n<style>\n  .active {\n    opacity: 1;\n  }</style>\n"
-  ],
+  "sources": [],
+  "sourcesContent": [],
   "names": [],
-  "mappings": "AAQE,OAAO,eAAC,CAAC,AACP,OAAO,CAAE,CAAC,AACZ,CAAC;ACUD,OAAO,eAAC,CAAC,AACP,OAAO,CAAE,CAAC,AACZ,CAAC"
+  "mappings": ""
 }

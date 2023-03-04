@@ -23,21 +23,6 @@ export const getUserDetails = async ( username, password ) => {
 		redirect: 'follow'
 	};
 	  
-	// var response = await fetch("http://localhost:3000/token", requestOptions);
-	// const tokenData = JSON.parse(response);
-	// console.log(tokenData);
-
-	// if (response.ok) {
-	// 	console.log("hello");
-	// 	// const data = response.json();
-	// 	const data = JSON.stringify(response);
-	// 	console.log("hello1");
-	// 	console.log(data);
-	// 	if (response.status === "success") {
-	// 		return 1;
-	// 	}
-	// };
-
 	var isCorrect = false;
 
 	await fetch("http://localhost:3000/token", requestOptions)
@@ -47,12 +32,6 @@ export const getUserDetails = async ( username, password ) => {
 			var data_json = JSON.parse(result);
 			if (data_json.status === 'success') {
 				api_key.set(data_json.data.token);
-
-				// let api;
-				// api_key.subscribe(value => {
-				// 	api = value;
-				// });
-				// console.log("api from auth.js is : " + api);
 
 				isCorrect = true;
 			}

@@ -2,11 +2,12 @@
 export let course;
 
 import { onMount } from "svelte";
+  import { compute_rest_props } from "svelte/internal";
 import { api_key } from "../../src/stores";
 import Gradeable from "./Gradeable.svelte";
 
 var gradeables;
-var gradeable_titles = [];
+var gradeable_infos = [];
 
 let selected;
 
@@ -36,37 +37,30 @@ onMount(async () => {
 		.then(result => {
 			gradeables = result[course];
 			for (var key in gradeables) {
-				gradeable_titles.push(gradeables[key].title);
-				gradeable_titles = gradeable_titles;
+				var info = new Object();
+				info['title'] = gradeables[key].title;
+				info["semester"] = gradeables[key].semester;
+				info["id"] = gradeables[key].id;
+				gradeable_infos.push(info);
+				gradeable_infos = gradeable_infos;
 			}
+			selected = gradeable_infos[0];
 		})
 		.catch(error => console.log('error', error));
 
-	selected = gradeable_titles[0];
-
 });
 
-
-
 </script>
+{#if gradeable_infos.length>0}
+	<select bind:value={selected}>
+		{#each gradeable_infos as info}
+			<option value={info}>
+				{info.title}
+			</option>
+		{/each}
+	</select>
 
-<select bind:value={selected}>
-	{#each gradeable_titles as title}
-		<option value={title}>
-			{title}
-		</option>
-	{/each}
-</select>
-
-{#key selected}
-	<Gradeable gradeable={selected}/>
-{/key}
-
-
-<!-- <ul>
-	{#each gradeable_titles as title}
-		<li>
-			{title}
-		</li>
-	{/each}
-</ul> -->
+	{#key selected}
+		<Gradeable gradeable={selected.title} semester={selected.semester} course={course} id={selected.id}/>
+	{/key}
+{/if}

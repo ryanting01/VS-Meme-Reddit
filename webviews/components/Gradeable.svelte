@@ -1,15 +1,17 @@
 <script>
     export let gradeable;
-    
+    export let semester;
+    export let course;
+    export let id;
+
     import { onMount } from "svelte";
     import { api_key } from "../../src/stores";
-    
-    var gradeables;
-    var gradeable_titles = [];
+    import { username_store } from "../../src/stores";
 
+    var response = "";
     gradeable = "";
 
-	let files;
+    let files;
 
 	$: if (files) {
 		// Note that `files` is of type `FileList`, not an Array:
@@ -27,31 +29,33 @@
         api_key.subscribe(value => {
             api = value;
         });
-
-        var myHeaders = new Headers();
-        myHeaders.append("Authorization", api);
+        let user_id;
+        username_store.subscribe(value => {
+            user_id = value;
+        });
 
         var formdata = new FormData();
-        formdata.append("user_id", "student");
+        formdata.append("Authorization", api);
+        formdata.append("User_id", user_id);
         formdata.append("previous_files", "");
-        formdata.append("semester", "s23");
-        formdata.append("course", "development");
-        formdata.append("gradeable", "cpp_buggy_custom");
-        // formdata.append("file", fileInput.files[0], "Ryan_Ting_Canada_Feb_2023.pdf");
-        formdata.append("file", files[0], "Ryan_Ting_Canada_Feb_2023.pdf");
+        formdata.append("Semester", semester);
+        formdata.append("Course", course);
+        formdata.append("Gradeable", id);
+        formdata.append("files", files[0], files[0].name);
 
         var requestOptions = {
         method: 'POST',
-        headers: myHeaders,
         body: formdata,
         redirect: 'follow'
         };
 
-        fetch("http://localhost:1511/api/submit", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        fetch("http://localhost:3000/submit", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            response = result.data;
+        })
         .catch(error => console.log('error', error));
-            }
+    }
 
 </script>
 
@@ -72,3 +76,5 @@
 {/if}
 
 <button on:click={submitToSubmitty}>Submit</button>
+
+{response}

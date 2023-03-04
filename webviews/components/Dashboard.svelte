@@ -11,6 +11,22 @@ var navOptions = [];
 let selected;
 let intSelected = 0;	// selected page index
 
+function courseIdToTitle (course_id) {
+	let result = "";
+
+	for (let i in course_id) {
+		let current_char = course_id.charAt(i);
+		if (i===0) {
+			result += current_char.toUpperCase();
+		} else if (current_char==="_") {
+			result += " ";
+		} else {
+			result += course_id.charAt(i);
+		}
+	}
+	return result;
+}
+
 onMount(async () => {
 	let api;
 	api_key.subscribe(value => {
@@ -36,6 +52,7 @@ onMount(async () => {
 		.then(response => response.json())
 		.then(result => {
 			courses = result.data.unarchived_courses;
+			//To Do: Make title the display namen
 			for (let i = 0; i < courses.length; i++) {
 				course_titles.push(courses[i].title);
 				course_titles = course_titles;
