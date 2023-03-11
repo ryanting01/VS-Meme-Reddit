@@ -20,6 +20,9 @@ export default fs
         format: "iife",
         name: "app",
         file: "out/compiled/" + name + ".js",
+        globals: {
+          'vscode': 'vscode'
+        }
       },
       plugins: [
         svelte({
@@ -39,8 +42,7 @@ export default fs
         // consult the documentation for details:
         // https://github.com/rollup/plugins/tree/master/packages/commonjs
         resolve({
-          browser: true,
-          dedupe: ["svelte"],
+          dedupe: ["svelte", "vscode"],
         }),
         commonjs(),
         typescript({
@@ -64,5 +66,8 @@ export default fs
       watch: {
         clearScreen: false,
       },
+      external: [
+        "vscode"
+      ]
     };
   });

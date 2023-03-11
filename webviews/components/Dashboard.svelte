@@ -16,9 +16,9 @@ function courseIdToTitle (course_id) {
 
 	for (let i in course_id) {
 		let current_char = course_id.charAt(i);
-		if (i===0) {
+		if (i==0) {
 			result += current_char.toUpperCase();
-		} else if (current_char==="_") {
+		} else if (current_char=="_") {
 			result += " ";
 		} else {
 			result += course_id.charAt(i);
@@ -54,7 +54,10 @@ onMount(async () => {
 			courses = result.data.unarchived_courses;
 			//To Do: Make title the display namen
 			for (let i = 0; i < courses.length; i++) {
-				course_titles.push(courses[i].title);
+				let course = new Object();
+				course["display_title"] = courseIdToTitle(courses[i].title);
+				course["id"] = courses[i].title;
+				course_titles.push(course);
 				course_titles = course_titles;
 			}
 		})
@@ -70,7 +73,6 @@ onMount(async () => {
 		navOptions = navOptions;
 	}
 	selected = navOptions[0];	// keep track of the selected 'page' object (default to the about component since we must have local db connection established first)
-
 });
 
 // change the selected component (the event.originalTarget.id is not accessible in Chrome so switched to event.srcElement.id)
@@ -81,15 +83,16 @@ function changeComponent(event) {
 }
 </script>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 {#if navOptions.length>0}
 	<!-- Include Bootstrap CSS-->
-	<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
-	<div class="container">
+	<div class="container fixed-top" style="margin-top:20px;">
 		<!--app navigation -->
 		<ul class="nav nav-tabs">
 			{#each navOptions as option, i}
 			<li class="nav-item">
-				<button class={intSelected==i ? "nav-link active p-2 ml-1" : "p-2 ml-1 nav-link"} on:click={changeComponent} id={i} role="tab">{option.page}</button>
+				<button class={intSelected==i ? "nav-link active p-2 ml-1" : "p-2 ml-1 nav-link"} on:click={changeComponent} id={i} role="tab">{option.page.display_title}</button>
 			</li>
 			{/each}
 		</ul>
@@ -97,10 +100,10 @@ function changeComponent(event) {
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="p-2">
-					<h1>{selected.page}</h1>
+					<h1 class="text-center">{selected.page.display_title}</h1>
 					<!-- this is where our main content is placed -->
-					{#key selected.page}
-						<Course course={selected.page}/>
+					{#key selected.page.id}
+						<Course course={selected.page.id}/>
 					{/key}
 				</div>
 			</div>

@@ -1,13 +1,13 @@
 {
-  "name": "reddit-memes",
-  "publisher": "sachinsinghroxx",
-  "displayName": "reddit-memes",
-  "description": "A VS-code extension for reddit memes",
+  "name": "submitty-vsode-extension",
+  "publisher": "Ryan Ting",
+  "displayName": "Submitty Extension",
+  "description": "A VS-code extension for Submitty, the autograding platform",
   "version": "0.2.0",
-  "icon": "media/reddit.png",
+  "icon": "media/submitty_logo_duck.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/version0chiro/VS-Meme-Reddit"
+    "url": "https://github.com/ryanting01/VS-Meme-Reddit"
   },
   "engines": {
     "vscode": "^1.56.0"
@@ -15,59 +15,36 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:reddit-memes.helloWorld",
-    "onView:reddit-memes-sidebar",
-    "onCommand:reddit-memes.refreshWeb"
-  ],
+  "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "reddit-memes-sidebar-view",
-          "title": "Reddit Memes",
-          "icon": "media/checklist.svg"
+          "id": "submitty-extension",
+          "title": "Submitty",
+          "icon": "media/duck_logo.png"
         }
       ]
     },
     "views": {
-      "reddit-memes-sidebar-view": [
+      "submitty-extension": [
         {
           "type": "webview",
-          "id": "reddit-memes-sidebar",
-          "name": "Reddit Memes",
-          "icon": "media/checklist.svg",
-          "contextualTitle": "Reddit Memes"
+          "id": "submitty-extension",
+          "name": "Submitty",
+          "icon": "media/checklist.svg"
         }
       ]
     },
-    "commands": [
-      {
-        "command": "reddit-memes.helloWorld",
-        "title": "Hello World"
-      },
-      {
-        "command": "reddit-memes.refreshWeb",
-        "category": "Reddit Memes",
-        "title": "Refresh"
-      }
-    ]
+    "commands": []
   },
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
-    "compile": "rollup -c && webpack --mode production",
-    "watch": "concurrently \"rollup -c -w\" \" webpack --watch\"",
-    "package": "concurrently \"rollup -c \" \" webpack --mode production --devtool hidden-source-map\"",
-    "test-compile": "tsc -p ./",
-    "test-watch": "tsc -watch -p ./",
-    "pretest": "npm run test-compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "watch": "concurrently \"rollup -c -w\" \" webpack --watch\""
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "@tsconfig/svelte": "^1.0.10",
     "@types/glob": "^7.1.3",
@@ -94,9 +71,11 @@
     "svelte-check": "^1.5.4",
     "svelte-preprocess": "^4.10.7",
     "svelte-store": "^0.0.2",
+    "svelte-table": "0.5.5",
     "tailwindcss": "^3.1.5",
     "ts-loader": "^8.4.0",
     "typescript": "^4.2.4",
+    "vscode": "1.1.37",
     "vscode-test": "^1.5.0",
     "webpack": "^5.19.0",
     "webpack-cli": "^4.4.0"

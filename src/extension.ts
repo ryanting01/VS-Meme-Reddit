@@ -5,7 +5,7 @@ export function activate(context: vscode.ExtensionContext) {
   const sidebarProvider = new SidebarProvider(context.extensionUri);
   context.subscriptions.push(
     vscode.window.registerWebviewViewProvider(
-      "reddit-memes-sidebar",
+      "submitty-extension",
       sidebarProvider
     )
   );
@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("reddit-memes.refreshWeb", async () => {
       await vscode.commands.executeCommand("workbench.action.closeSidebar");
       await vscode.commands.executeCommand(
-        "workbench.view.extension.reddit-memes-sidebar-view"
+        "workbench.view.extension.submitty-extension-view"
       );
       // HelloWorldPanel.kill();
       //HelloWorldPanel.createOrShow(context.extensionUri);
