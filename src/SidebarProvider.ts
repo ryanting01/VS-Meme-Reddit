@@ -19,13 +19,15 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
 
     webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
 
-    webviewView.webview.onDidReceiveMessage(async (data) => {
+    webviewView.webview.onDidReceiveMessage(async (data: {
+      title: any; type: any; value: string; }) => {
       switch (data.type) {
         case "onInfo": {
           if (!data.value) {
             return;
           }
           vscode.window.showInformationMessage(data.value);
+          vscode.window.showInformationMessage(data.value + "HI");
           break;
         }
         case "onError": {
@@ -35,9 +37,27 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
           vscode.window.showErrorMessage(data.value);
           break;
         }
+        case "diff": {
+          console.log("hi");
+          let activePath : any;
+          const {activeTextEditor} = vscode.window;
+          activePath = activeTextEditor && activeTextEditor.document.uri.fsPath;
+          vscode.window.showInformationMessage(data.value + activePath);
+          this.diff(activePath, activePath);
+        }
+        case "writeAndDiff": {
+          console.log("write");
+          vscode.commands.executeCommand("fs/readWriteFile", data.title, data.value);
+        }
       }
     });
   }
+
+  public diff ( leftPath: string, rightPath: string ) {
+    const leftUri = vscode.Uri.file ( leftPath ),
+          rightUri = vscode.Uri.file ( rightPath );
+    return vscode.commands.executeCommand ( 'vscode.diff', leftUri, rightUri );
+  }  
 
   public revive(panel: vscode.WebviewView) {
     this._view = panel;

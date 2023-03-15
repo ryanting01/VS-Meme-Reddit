@@ -692,44 +692,44 @@ var app = (function () {
     			t13 = text(/*error*/ ctx[2]);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
-    			add_location(link, file$3, 29, 0, 597);
+    			add_location(link, file$3, 30, 0, 645);
     			if (!src_url_equal(img.src, img_src_value = "img/submitty_logo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "...");
     			attr_dev(img, "height", "36");
-    			add_location(img, file$3, 34, 6, 743);
-    			add_location(h10, file$3, 34, 2, 739);
-    			add_location(div0, file$3, 33, 1, 731);
+    			add_location(img, file$3, 35, 6, 791);
+    			add_location(h10, file$3, 35, 2, 787);
+    			add_location(div0, file$3, 34, 1, 779);
     			attr_dev(h11, "class", "app-title");
-    			add_location(h11, file$3, 38, 2, 827);
-    			add_location(div1, file$3, 37, 1, 819);
+    			add_location(h11, file$3, 39, 2, 875);
+    			add_location(div1, file$3, 38, 1, 867);
     			attr_dev(label0, "for", "username");
-    			add_location(label0, file$3, 44, 3, 963);
+    			add_location(label0, file$3, 45, 3, 1011);
     			attr_dev(input0, "type", "username");
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "id", "username");
     			attr_dev(input0, "aria-describedby", "emailHelp");
     			attr_dev(input0, "placeholder", "Username");
-    			add_location(input0, file$3, 45, 3, 1005);
+    			add_location(input0, file$3, 46, 3, 1053);
     			attr_dev(div2, "class", "form-group");
-    			add_location(div2, file$3, 43, 3, 935);
+    			add_location(div2, file$3, 44, 3, 983);
     			attr_dev(label1, "for", "password");
-    			add_location(label1, file$3, 48, 3, 1179);
+    			add_location(label1, file$3, 49, 3, 1227);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "id", "password");
     			attr_dev(input1, "placeholder", "Password");
-    			add_location(input1, file$3, 49, 3, 1221);
+    			add_location(input1, file$3, 50, 3, 1269);
     			attr_dev(div3, "class", "form-group");
-    			add_location(div3, file$3, 47, 3, 1151);
+    			add_location(div3, file$3, 48, 3, 1199);
     			attr_dev(button, "type", "submit");
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file$3, 51, 3, 1338);
-    			add_location(form, file$3, 42, 2, 892);
-    			add_location(div4, file$3, 41, 1, 884);
-    			add_location(small, file$3, 56, 2, 1429);
-    			add_location(div5, file$3, 55, 1, 1421);
+    			add_location(button, file$3, 52, 3, 1386);
+    			add_location(form, file$3, 43, 2, 940);
+    			add_location(div4, file$3, 42, 1, 932);
+    			add_location(small, file$3, 57, 2, 1477);
+    			add_location(div5, file$3, 56, 1, 1469);
     			attr_dev(div6, "class", "vstack gap-3");
-    			add_location(div6, file$3, 31, 0, 702);
+    			add_location(div6, file$3, 32, 0, 750);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -852,8 +852,8 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		getUserDetails,
     		store,
-    		api_key,
     		username_store,
+    		api_key,
     		username,
     		password,
     		error,
@@ -895,22 +895,22 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[15] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i];
+    	child_ctx[18] = list[i];
     	return child_ctx;
     }
 
-    // (119:12) {#if files}
+    // (146:12) {#if files}
     function create_if_block_3(ctx) {
     	let h2;
     	let t1;
     	let each_1_anchor;
-    	let each_value_1 = Array.from(/*files*/ ctx[3]);
+    	let each_value_1 = Array.from(/*files*/ ctx[4]);
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -929,7 +929,7 @@ var app = (function () {
     			}
 
     			each_1_anchor = empty();
-    			add_location(h2, file$2, 119, 16, 3569);
+    			add_location(h2, file$2, 146, 16, 4127);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -942,8 +942,8 @@ var app = (function () {
     			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*Array, files*/ 8) {
-    				each_value_1 = Array.from(/*files*/ ctx[3]);
+    			if (dirty & /*Array, files*/ 16) {
+    				each_value_1 = Array.from(/*files*/ ctx[4]);
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -978,20 +978,20 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(119:12) {#if files}",
+    		source: "(146:12) {#if files}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:16) {#each Array.from(files) as file}
+    // (148:16) {#each Array.from(files) as file}
     function create_each_block_1(ctx) {
     	let p;
-    	let t0_value = /*file*/ ctx[15].name + "";
+    	let t0_value = /*file*/ ctx[18].name + "";
     	let t0;
     	let t1;
-    	let t2_value = /*file*/ ctx[15].size + "";
+    	let t2_value = /*file*/ ctx[18].size + "";
     	let t2;
     	let t3;
 
@@ -1002,7 +1002,7 @@ var app = (function () {
     			t1 = text(" (");
     			t2 = text(t2_value);
     			t3 = text(" bytes)");
-    			add_location(p, file$2, 121, 20, 3664);
+    			add_location(p, file$2, 148, 20, 4222);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1012,8 +1012,8 @@ var app = (function () {
     			append_dev(p, t3);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*files*/ 8 && t0_value !== (t0_value = /*file*/ ctx[15].name + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*files*/ 8 && t2_value !== (t2_value = /*file*/ ctx[15].size + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*files*/ 16 && t0_value !== (t0_value = /*file*/ ctx[18].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*files*/ 16 && t2_value !== (t2_value = /*file*/ ctx[18].size + "")) set_data_dev(t2, t2_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -1024,14 +1024,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(121:16) {#each Array.from(files) as file}",
+    		source: "(148:16) {#each Array.from(files) as file}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (168:4) {:else}
+    // (206:4) {:else}
     function create_else_block$1(ctx) {
     	let p;
     	let t0;
@@ -1045,7 +1045,7 @@ var app = (function () {
     			t1 = text(/*gradeable*/ ctx[0]);
     			t2 = text(" so far");
     			attr_dev(p, "class", "fs-2");
-    			add_location(p, file$2, 168, 8, 5203);
+    			add_location(p, file$2, 206, 8, 6368);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1065,14 +1065,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(168:4) {:else}",
+    		source: "(206:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (144:40) 
+    // (171:40) 
     function create_if_block_2(ctx) {
     	let div1;
     	let p;
@@ -1088,7 +1088,7 @@ var app = (function () {
     	let th1;
     	let t6;
     	let tbody;
-    	let each_value = /*gradeableResults*/ ctx[5];
+    	let each_value = /*gradeableResults*/ ctx[6];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -1120,20 +1120,20 @@ var app = (function () {
     			}
 
     			attr_dev(p, "class", "fs-2");
-    			add_location(p, file$2, 146, 12, 4398);
+    			add_location(p, file$2, 173, 12, 4956);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$2, 152, 28, 4655);
+    			add_location(th0, file$2, 179, 28, 5213);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$2, 153, 28, 4712);
-    			add_location(tr, file$2, 151, 24, 4622);
-    			add_location(thead, file$2, 150, 20, 4590);
-    			add_location(tbody, file$2, 156, 20, 4822);
+    			add_location(th1, file$2, 180, 28, 5270);
+    			add_location(tr, file$2, 178, 24, 5180);
+    			add_location(thead, file$2, 177, 20, 5148);
+    			add_location(tbody, file$2, 183, 20, 5380);
     			attr_dev(table, "class", "table table-hover");
-    			add_location(table, file$2, 149, 16, 4536);
+    			add_location(table, file$2, 176, 16, 5094);
     			attr_dev(div0, "class", "table-wrapper-scroll-y my-custom-scrollbar svelte-zfsjrg");
-    			add_location(div0, file$2, 148, 12, 4463);
+    			add_location(div0, file$2, 175, 12, 5021);
     			attr_dev(div1, "class", "bg-light border rounded-3");
-    			add_location(div1, file$2, 144, 8, 4345);
+    			add_location(div1, file$2, 171, 8, 4903);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1158,8 +1158,8 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if (dirty & /*gradeable*/ 1) set_data_dev(t1, /*gradeable*/ ctx[0]);
 
-    			if (dirty & /*gradeableResults*/ 32) {
-    				each_value = /*gradeableResults*/ ctx[5];
+    			if (dirty & /*getSubmissionFile, gradeableResults, tsvscode, submissionFile, id*/ 706) {
+    				each_value = /*gradeableResults*/ ctx[6];
     				validate_each_argument(each_value);
     				let i;
 
@@ -1192,14 +1192,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(144:40) ",
+    		source: "(171:40) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (142:31) 
+    // (169:31) 
     function create_if_block_1(ctx) {
     	let p;
 
@@ -1208,7 +1208,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "This is a team submission, results on web application";
     			attr_dev(p, "class", "fs-2");
-    			add_location(p, file$2, 142, 8, 4222);
+    			add_location(p, file$2, 169, 8, 4780);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1223,14 +1223,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(142:31) ",
+    		source: "(169:31) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (140:4) {#if submissionClosed}
+    // (167:4) {#if submissionClosed}
     function create_if_block$3(ctx) {
     	let p;
 
@@ -1239,7 +1239,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Submission is closed, go to web application for results";
     			attr_dev(p, "class", "fs-2");
-    			add_location(p, file$2, 140, 8, 4106);
+    			add_location(p, file$2, 167, 8, 4664);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1254,24 +1254,33 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(140:4) {#if submissionClosed}",
+    		source: "(167:4) {#if submissionClosed}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (158:20) {#each gradeableResults as result}
+    // (185:20) {#each gradeableResults as result}
     function create_each_block$2(ctx) {
     	let tr;
     	let th;
-    	let t0_value = /*result*/ ctx[12].version + "";
+    	let t0_value = /*result*/ ctx[15].version + "";
     	let t0;
     	let t1;
-    	let td;
-    	let t2_value = /*result*/ ctx[12].result + "";
+    	let td0;
+    	let t2_value = /*result*/ ctx[15].result + "";
     	let t2;
     	let t3;
+    	let td1;
+    	let button;
+    	let t5;
+    	let mounted;
+    	let dispose;
+
+    	function click_handler() {
+    		return /*click_handler*/ ctx[13](/*result*/ ctx[15]);
+    	}
 
     	const block = {
     		c: function create() {
@@ -1279,29 +1288,47 @@ var app = (function () {
     			th = element("th");
     			t0 = text(t0_value);
     			t1 = space();
-    			td = element("td");
+    			td0 = element("td");
     			t2 = text(t2_value);
     			t3 = space();
+    			td1 = element("td");
+    			button = element("button");
+    			button.textContent = "See Diff";
+    			t5 = space();
     			attr_dev(th, "scope", "row");
-    			add_location(th, file$2, 159, 28, 4942);
-    			add_location(td, file$2, 160, 28, 5008);
-    			add_location(tr, file$2, 158, 24, 4909);
+    			add_location(th, file$2, 186, 28, 5500);
+    			add_location(td0, file$2, 187, 28, 5566);
+    			attr_dev(button, "class", "btn btn-primary ");
+    			add_location(button, file$2, 189, 32, 5656);
+    			add_location(td1, file$2, 188, 28, 5619);
+    			add_location(tr, file$2, 185, 24, 5467);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
     			append_dev(tr, th);
     			append_dev(th, t0);
     			append_dev(tr, t1);
-    			append_dev(tr, td);
-    			append_dev(td, t2);
+    			append_dev(tr, td0);
+    			append_dev(td0, t2);
     			append_dev(tr, t3);
+    			append_dev(tr, td1);
+    			append_dev(td1, button);
+    			append_dev(tr, t5);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", click_handler, false, false, false);
+    				mounted = true;
+    			}
     		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*gradeableResults*/ 32 && t0_value !== (t0_value = /*result*/ ctx[12].version + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*gradeableResults*/ 32 && t2_value !== (t2_value = /*result*/ ctx[12].result + "")) set_data_dev(t2, t2_value);
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*gradeableResults*/ 64 && t0_value !== (t0_value = /*result*/ ctx[15].version + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*gradeableResults*/ 64 && t2_value !== (t2_value = /*result*/ ctx[15].result + "")) set_data_dev(t2, t2_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -1309,7 +1336,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(158:20) {#each gradeableResults as result}",
+    		source: "(185:20) {#each gradeableResults as result}",
     		ctx
     	});
 
@@ -1319,35 +1346,33 @@ var app = (function () {
     function create_fragment$3(ctx) {
     	let link;
     	let t0;
-    	let button0;
-    	let t2;
     	let div5;
     	let div4;
     	let p;
+    	let t1;
+    	let t2;
     	let t3;
-    	let t4;
-    	let t5;
     	let div0;
     	let input;
-    	let t6;
+    	let t4;
     	let div1;
-    	let t7;
+    	let t5;
     	let div3;
-    	let button1;
-    	let t9;
+    	let button;
+    	let t7;
     	let div2;
+    	let t8;
+    	let t9;
     	let t10;
     	let t11;
-    	let t12;
-    	let t13;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*files*/ ctx[3] && create_if_block_3(ctx);
+    	let if_block0 = /*files*/ ctx[4] && create_if_block_3(ctx);
 
     	function select_block_type(ctx, dirty) {
-    		if (/*submissionClosed*/ ctx[1]) return create_if_block$3;
-    		if (/*isTeamAssignment*/ ctx[2]) return create_if_block_1;
-    		if (/*gradeableResults*/ ctx[5].length > 0) return create_if_block_2;
+    		if (/*submissionClosed*/ ctx[2]) return create_if_block$3;
+    		if (/*isTeamAssignment*/ ctx[3]) return create_if_block_1;
+    		if (/*gradeableResults*/ ctx[6].length > 0) return create_if_block_2;
     		return create_else_block$1;
     	}
 
@@ -1358,58 +1383,52 @@ var app = (function () {
     		c: function create() {
     			link = element("link");
     			t0 = space();
-    			button0 = element("button");
-    			button0.textContent = "Show Diff";
-    			t2 = space();
     			div5 = element("div");
     			div4 = element("div");
     			p = element("p");
-    			t3 = text("Upload files to ");
-    			t4 = text(/*gradeable*/ ctx[0]);
-    			t5 = space();
+    			t1 = text("Upload files to ");
+    			t2 = text(/*gradeable*/ ctx[0]);
+    			t3 = space();
     			div0 = element("div");
     			input = element("input");
-    			t6 = space();
+    			t4 = space();
     			div1 = element("div");
     			if (if_block0) if_block0.c();
-    			t7 = space();
+    			t5 = space();
     			div3 = element("div");
-    			button1 = element("button");
-    			button1.textContent = "Submit";
-    			t9 = space();
+    			button = element("button");
+    			button.textContent = "Submit";
+    			t7 = space();
     			div2 = element("div");
-    			t10 = text(/*response*/ ctx[4]);
+    			t8 = text(/*response*/ ctx[5]);
+    			t9 = space();
+    			t10 = text(/*isTeamAssignment*/ ctx[3]);
     			t11 = space();
-    			t12 = text(/*isTeamAssignment*/ ctx[2]);
-    			t13 = space();
     			if_block1.c();
     			attr_dev(link, "href", "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css");
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "integrity", "sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3");
     			attr_dev(link, "crossorigin", "anonymous");
-    			add_location(link, file$2, 98, 0, 2871);
-    			attr_dev(button0, "type", "button");
-    			attr_dev(button0, "class", "btn btn-primary ");
-    			add_location(button0, file$2, 100, 0, 3083);
+    			add_location(link, file$2, 129, 0, 3522);
     			attr_dev(p, "class", "fs-2");
-    			add_location(p, file$2, 107, 8, 3287);
+    			add_location(p, file$2, 134, 8, 3845);
     			attr_dev(input, "id", "folder-opener");
     			input.multiple = true;
     			attr_dev(input, "type", "file");
-    			add_location(input, file$2, 110, 12, 3383);
+    			add_location(input, file$2, 137, 12, 3941);
     			attr_dev(div0, "class", "vstack gap-3");
-    			add_location(div0, file$2, 109, 8, 3344);
-    			add_location(div1, file$2, 117, 8, 3523);
-    			attr_dev(button1, "type", "button");
-    			attr_dev(button1, "class", "btn btn-primary ");
-    			add_location(button1, file$2, 127, 12, 3834);
-    			add_location(div2, file$2, 130, 12, 3967);
+    			add_location(div0, file$2, 136, 8, 3902);
+    			add_location(div1, file$2, 144, 8, 4081);
+    			attr_dev(button, "type", "button");
+    			attr_dev(button, "class", "btn btn-primary ");
+    			add_location(button, file$2, 154, 12, 4392);
+    			add_location(div2, file$2, 157, 12, 4525);
     			attr_dev(div3, "class", "d-grid gap-2 col-6 text-center");
-    			add_location(div3, file$2, 126, 8, 3777);
+    			add_location(div3, file$2, 153, 8, 4335);
     			attr_dev(div4, "class", "vstack gap-3 bg-light border rounded-3");
-    			add_location(div4, file$2, 106, 4, 3226);
+    			add_location(div4, file$2, 133, 4, 3784);
     			attr_dev(div5, "class", "vstack gap-3 position-relative");
-    			add_location(div5, file$2, 105, 0, 3177);
+    			add_location(div5, file$2, 132, 0, 3735);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1417,44 +1436,41 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, link, anchor);
     			insert_dev(target, t0, anchor);
-    			insert_dev(target, button0, anchor);
-    			insert_dev(target, t2, anchor);
     			insert_dev(target, div5, anchor);
     			append_dev(div5, div4);
     			append_dev(div4, p);
-    			append_dev(p, t3);
-    			append_dev(p, t4);
-    			append_dev(div4, t5);
+    			append_dev(p, t1);
+    			append_dev(p, t2);
+    			append_dev(div4, t3);
     			append_dev(div4, div0);
     			append_dev(div0, input);
-    			append_dev(div4, t6);
+    			append_dev(div4, t4);
     			append_dev(div4, div1);
     			if (if_block0) if_block0.m(div1, null);
-    			append_dev(div4, t7);
+    			append_dev(div4, t5);
     			append_dev(div4, div3);
-    			append_dev(div3, button1);
-    			append_dev(div3, t9);
+    			append_dev(div3, button);
+    			append_dev(div3, t7);
     			append_dev(div3, div2);
-    			append_dev(div2, t10);
+    			append_dev(div2, t8);
+    			append_dev(div5, t9);
+    			append_dev(div5, t10);
     			append_dev(div5, t11);
-    			append_dev(div5, t12);
-    			append_dev(div5, t13);
     			if_block1.m(div5, null);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", showDiff, false, false, false),
-    					listen_dev(input, "change", /*input_change_handler*/ ctx[10]),
-    					listen_dev(button1, "click", /*submitToSubmitty*/ ctx[6], false, false, false)
+    					listen_dev(input, "change", /*input_change_handler*/ ctx[12]),
+    					listen_dev(button, "click", /*submitToSubmitty*/ ctx[8], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*gradeable*/ 1) set_data_dev(t4, /*gradeable*/ ctx[0]);
+    			if (dirty & /*gradeable*/ 1) set_data_dev(t2, /*gradeable*/ ctx[0]);
 
-    			if (/*files*/ ctx[3]) {
+    			if (/*files*/ ctx[4]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -1467,8 +1483,8 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (dirty & /*response*/ 16) set_data_dev(t10, /*response*/ ctx[4]);
-    			if (dirty & /*isTeamAssignment*/ 4) set_data_dev(t12, /*isTeamAssignment*/ ctx[2]);
+    			if (dirty & /*response*/ 32) set_data_dev(t8, /*response*/ ctx[5]);
+    			if (dirty & /*isTeamAssignment*/ 8) set_data_dev(t10, /*isTeamAssignment*/ ctx[3]);
 
     			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block1) {
     				if_block1.p(ctx, dirty);
@@ -1487,8 +1503,6 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(link);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(button0);
-    			if (detaching) detach_dev(t2);
     			if (detaching) detach_dev(div5);
     			if (if_block0) if_block0.d();
     			if_block1.d();
@@ -1508,11 +1522,6 @@ var app = (function () {
     	return block;
     }
 
-    function showDiff() {
-    	// vscode.commands.executeCommand('code --diff hi.txt hi1.txt');
-    	console.log("hi");
-    }
-
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Gradeable', slots, []);
@@ -1523,31 +1532,15 @@ var app = (function () {
     	let { submissionClosed } = $$props;
     	let { isTeamAssignment } = $$props;
     	var response = "";
-
-    	// let files: ArrayLike<unknown> | Iterable<unknown>;
     	let files;
-
     	let gradeableResults = [];
+    	let submissionFile;
 
     	function submitToSubmitty() {
-    		// let api : string|Number;
-    		// api_key.subscribe(value => {
-    		//     api = value;
-    		// });
     		var api = get_store_value(api_key);
-
-    		// let user_id;
-    		// username_store.subscribe(value => {
-    		//     user_id = value;
-    		// });
     		const user_id = get_store_value(username_store);
-
     		var formdata = new FormData();
-
-    		// formdata.append("Authorization", api);
-    		// formdata.append("User_id", user_id);
     		formdata.append("Authorization", api);
-
     		formdata.append("User_id", user_id);
     		formdata.append("previous_files", "");
     		formdata.append("Semester", semester);
@@ -1562,7 +1555,7 @@ var app = (function () {
     		};
 
     		fetch("http://localhost:3000/submit", requestOptions).then(response => response.json()).then(result => {
-    			$$invalidate(4, response = result.data);
+    			$$invalidate(5, response = result.data);
     		}).catch(error => console.log('error', error));
     	}
 
@@ -1592,10 +1585,41 @@ var app = (function () {
 
     		fetch("http://localhost:3000/gradeableResults", requestOptions).then(response => response.json()).then(result => {
     			if (result.status == "success") {
-    				$$invalidate(5, gradeableResults = result["data"].reverse());
+    				$$invalidate(6, gradeableResults = result["data"].reverse());
     			} else {
     				return;
     			}
+    		}).catch(error => console.log('error', error));
+    	}
+
+    	function getSubmissionFile(version) {
+    		var myHeaders = new Headers();
+    		myHeaders.append("Content-Type", "application/json");
+    		let api;
+
+    		api_key.subscribe(value => {
+    			api = value;
+    		});
+
+    		var raw = JSON.stringify({
+    			"Authorization": api,
+    			semester,
+    			course,
+    			"gradeable": id,
+    			version,
+    			"file_num": "0"
+    		});
+
+    		var requestOptions = {
+    			method: 'POST',
+    			headers: myHeaders,
+    			body: raw,
+    			redirect: 'follow'
+    		};
+
+    		fetch("http://localhost:3000/getSubmissionFiles", requestOptions).then(response => response.text()).then(result => {
+    			$$invalidate(7, submissionFile = result);
+    			console.log("SUBMISSION FILE IS: " + submissionFile);
     		}).catch(error => console.log('error', error));
     	}
 
@@ -1640,16 +1664,26 @@ var app = (function () {
 
     	function input_change_handler() {
     		files = this.files;
-    		$$invalidate(3, files);
+    		$$invalidate(4, files);
     	}
+
+    	const click_handler = async result => {
+    		await getSubmissionFile(result.version);
+
+    		tsvscode.postMessage({
+    			type: "writeAndDiff",
+    			value: submissionFile,
+    			title: id + result.version
+    		});
+    	};
 
     	$$self.$$set = $$props => {
     		if ('gradeable' in $$props) $$invalidate(0, gradeable = $$props.gradeable);
-    		if ('semester' in $$props) $$invalidate(7, semester = $$props.semester);
-    		if ('course' in $$props) $$invalidate(8, course = $$props.course);
-    		if ('id' in $$props) $$invalidate(9, id = $$props.id);
-    		if ('submissionClosed' in $$props) $$invalidate(1, submissionClosed = $$props.submissionClosed);
-    		if ('isTeamAssignment' in $$props) $$invalidate(2, isTeamAssignment = $$props.isTeamAssignment);
+    		if ('semester' in $$props) $$invalidate(10, semester = $$props.semester);
+    		if ('course' in $$props) $$invalidate(11, course = $$props.course);
+    		if ('id' in $$props) $$invalidate(1, id = $$props.id);
+    		if ('submissionClosed' in $$props) $$invalidate(2, submissionClosed = $$props.submissionClosed);
+    		if ('isTeamAssignment' in $$props) $$invalidate(3, isTeamAssignment = $$props.isTeamAssignment);
     	};
 
     	$$self.$capture_state = () => ({
@@ -1659,27 +1693,30 @@ var app = (function () {
     		id,
     		submissionClosed,
     		isTeamAssignment,
+    		onMount,
     		api_key,
     		get: get_store_value,
     		username_store,
     		response,
     		files,
     		gradeableResults,
-    		showDiff,
+    		submissionFile,
     		submitToSubmitty,
-    		getGradeableResults
+    		getGradeableResults,
+    		getSubmissionFile
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('gradeable' in $$props) $$invalidate(0, gradeable = $$props.gradeable);
-    		if ('semester' in $$props) $$invalidate(7, semester = $$props.semester);
-    		if ('course' in $$props) $$invalidate(8, course = $$props.course);
-    		if ('id' in $$props) $$invalidate(9, id = $$props.id);
-    		if ('submissionClosed' in $$props) $$invalidate(1, submissionClosed = $$props.submissionClosed);
-    		if ('isTeamAssignment' in $$props) $$invalidate(2, isTeamAssignment = $$props.isTeamAssignment);
-    		if ('response' in $$props) $$invalidate(4, response = $$props.response);
-    		if ('files' in $$props) $$invalidate(3, files = $$props.files);
-    		if ('gradeableResults' in $$props) $$invalidate(5, gradeableResults = $$props.gradeableResults);
+    		if ('semester' in $$props) $$invalidate(10, semester = $$props.semester);
+    		if ('course' in $$props) $$invalidate(11, course = $$props.course);
+    		if ('id' in $$props) $$invalidate(1, id = $$props.id);
+    		if ('submissionClosed' in $$props) $$invalidate(2, submissionClosed = $$props.submissionClosed);
+    		if ('isTeamAssignment' in $$props) $$invalidate(3, isTeamAssignment = $$props.isTeamAssignment);
+    		if ('response' in $$props) $$invalidate(5, response = $$props.response);
+    		if ('files' in $$props) $$invalidate(4, files = $$props.files);
+    		if ('gradeableResults' in $$props) $$invalidate(6, gradeableResults = $$props.gradeableResults);
+    		if ('submissionFile' in $$props) $$invalidate(7, submissionFile = $$props.submissionFile);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1687,14 +1724,13 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*submissionClosed, isTeamAssignment*/ 6) {
-    			// $: if (!results.submissionClosed && !results.isTeamAssignment) {
+    		if ($$self.$$.dirty & /*submissionClosed, isTeamAssignment*/ 12) {
     			if (!submissionClosed && !isTeamAssignment) {
     				getGradeableResults();
     			}
     		}
 
-    		if ($$self.$$.dirty & /*files*/ 8) {
+    		if ($$self.$$.dirty & /*files*/ 16) {
     			if (files) {
     				// Note that `files` is of type `FileList`, not an Array:
     				// https://developer.mozilla.org/en-US/docs/Web/API/FileList
@@ -1707,16 +1743,19 @@ var app = (function () {
 
     	return [
     		gradeable,
+    		id,
     		submissionClosed,
     		isTeamAssignment,
     		files,
     		response,
     		gradeableResults,
+    		submissionFile,
     		submitToSubmitty,
+    		getSubmissionFile,
     		semester,
     		course,
-    		id,
-    		input_change_handler
+    		input_change_handler,
+    		click_handler
     	];
     }
 
@@ -1726,11 +1765,11 @@ var app = (function () {
 
     		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
     			gradeable: 0,
-    			semester: 7,
-    			course: 8,
-    			id: 9,
-    			submissionClosed: 1,
-    			isTeamAssignment: 2
+    			semester: 10,
+    			course: 11,
+    			id: 1,
+    			submissionClosed: 2,
+    			isTeamAssignment: 3
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {

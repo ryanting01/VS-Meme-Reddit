@@ -10,12 +10,14 @@
     "url": "https://github.com/ryanting01/VS-Meme-Reddit"
   },
   "engines": {
-    "vscode": "^1.56.0"
+    "vscode": "^1.52.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:submitty.helloWorld"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {
@@ -37,7 +39,17 @@
         }
       ]
     },
-    "commands": []
+    "commands": [
+      {
+        "command": "submitty.helloWorld",
+        "title": "Hello World"
+      },
+      {
+				"command": "fs/readWriteFile",
+				"title": "Read and Write file",
+				"category": "FS"
+			}
+    ]
   },
   "scripts": {
     "watch": "concurrently \"rollup -c -w\" \" webpack --watch\""
@@ -51,7 +63,7 @@
     "@types/history": "^4.7.3",
     "@types/mocha": "^8.0.4",
     "@types/node": "^12.20.55",
-    "@types/vscode": "^1.56.0",
+    "@types/vscode": "1.34.0",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.7",

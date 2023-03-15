@@ -2,5 +2,9 @@
     "extends": "@tsconfig/svelte/tsconfig.json",
     "include": ["./**/*", ],
     "exclude": ["../node_modules/*"],
-    "compilerOptions": {"strict": true, "types": ["node"]}
+    "compilerOptions": {"strict": true, "types": ["node"]},
+    "lib": [
+      "es2017",
+      "dom"
+    ]    
   }

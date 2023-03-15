@@ -21,7 +21,8 @@ export default fs
         name: "app",
         file: "out/compiled/" + name + ".js",
         globals: {
-          'vscode': 'vscode'
+          'vscode': 'vscode',
+          "@types/vscode": "@types/vscode"
         }
       },
       plugins: [
@@ -42,7 +43,8 @@ export default fs
         // consult the documentation for details:
         // https://github.com/rollup/plugins/tree/master/packages/commonjs
         resolve({
-          dedupe: ["svelte", "vscode"],
+          dedupe: ["svelte", "vscode", "@types/vscode"],
+          extensions: ['.ts', '.mjs', '.js', '.json', '.node']
         }),
         commonjs(),
         typescript({
@@ -67,6 +69,7 @@ export default fs
         clearScreen: false,
       },
       external: [
+        "@types/vscode",
         "vscode"
       ]
     };

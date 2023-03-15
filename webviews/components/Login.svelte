@@ -1,8 +1,9 @@
 <script>
 	import { getUserDetails } from '../../src/hooks/auth';
 	import { store } from '../../src/hooks/auth';
-	import { api_key } from "../../src/stores";
+	// import { api_key } from "../../src/stores";
 	import { username_store } from "../../src/stores";
+	import { api_key } from "../../src/stores";
 
 	let username = '';
 	let password = '';
