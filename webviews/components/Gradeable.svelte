@@ -32,12 +32,13 @@
 	}
 
     function submitToSubmitty() {
+        var state = tsvscode.getState();
         var api = get(api_key);
-        const user_id = get(username_store);
-
+        var username = state.username;
+        
         var formdata = new FormData();
         formdata.append("Authorization", api);
-        formdata.append("User_id", user_id);
+        formdata.append("User_id", username);
         formdata.append("previous_files", "");
         formdata.append("Semester", semester);
         formdata.append("Course", course);
@@ -84,6 +85,14 @@
         .then(result => {
             if (result.status=="success") {
                 gradeableResults = result["data"].reverse();
+                for (let i in gradeableResults) {
+                    let version = gradeableResults[i].version;
+                    gradeableResults[i].version = Number(version) +1;
+
+                    let result = gradeableResults[i].result*100;
+                    gradeableResults[i].result = result.toFixed(2);
+
+                }
             } else {
                 return;
             }
@@ -119,16 +128,15 @@
         .then(response => response.text())
         .then(result => {
             submissionFile = result;
-            console.log("SUBMISSION FILE IS: " + submissionFile);
         })
         .catch(error => console.log('error', error));
-        }
+    }
+
 
 </script>
 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
 
 <div class="vstack gap-3 position-relative">
     <div class="vstack gap-3 bg-light border rounded-3">
@@ -160,8 +168,6 @@
             </div>
         </div>
     </div>
-
-    {isTeamAssignment}
 
 
     {#if submissionClosed}

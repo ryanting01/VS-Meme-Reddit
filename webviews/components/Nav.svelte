@@ -31,7 +31,6 @@
         await fetch("http://localhost:3000/courses", requestOptions)
             .then(response => response.json())
             .then(result => {
-                console.log("IN get courses");
                 console.log(result);
                 courses = result.data.unarchived_courses;
                 for (let i = 0; i < courses.length; i++) {
@@ -43,7 +42,6 @@
     }
 
     function getNavOptions() {
-        console.log("Outside get courses");
         for (let i=0; i < courses.length; i++) {
             let new_page = {page:course_titles[i]};
             navOptions.append(new_page);

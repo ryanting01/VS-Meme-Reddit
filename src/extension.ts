@@ -13,6 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
     )
   );
+  
   console.log('Congratulations, your extension "reddit-memes" is now active!');
 
   let disposable = vscode.commands.registerCommand(

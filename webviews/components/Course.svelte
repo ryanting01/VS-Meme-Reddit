@@ -70,6 +70,19 @@ onMount(async () => {
 		})
 		.catch(error => console.log('error', error));
 
+	var state = tsvscode.getState();
+	if (state.gradeable) {
+		const gradeableSetting = state.gradeable; // The JSON data our extension sent
+		if(gradeableSetting) {
+			for (let i in gradeable_infos) {
+				if (gradeable_infos[i]["id"]==gradeableSetting) {
+					selected = gradeable_infos[i];
+				}
+			}
+		}
+	}
+
+
 });
 
 </script>
@@ -96,7 +109,9 @@ onMount(async () => {
 					<Gradeable gradeable={selected.title} semester={selected.semester} course={course} id={selected.id} submissionClosed={selected.submissionClosed} isTeamAssignment={selected.isTeamAssignment}/>
 				{/key}
 			{/key}
-			<button class="float-right" on:click={restart}>Restart</button>
+			<button type="button" class="btn btn-primary "  on:click={restart}>
+				Refresh
+			</button>	
 		</div>
 		
 	</div>

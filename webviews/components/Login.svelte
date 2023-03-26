@@ -1,5 +1,6 @@
 <script>
-	import { getUserDetails } from '../../src/hooks/auth';
+  import { onMount } from 'svelte';
+	import { getUserDetails, checkAuthState } from '../../src/hooks/auth';
 	import { store } from '../../src/hooks/auth';
 	// import { api_key } from "../../src/stores";
 	import { username_store } from "../../src/stores";
@@ -14,17 +15,25 @@
 		const user = await getUserDetails( username, password )
 
 		if ( user ) {
-			console.log(user)
 			$store = user
+
 			username_store.set(username);
 			if ( error ) error = ''
 		}
 		else {
 			error = 'Incorrect username and password.'
-			console.log("Incorrect username and password.")
 		}
 
 	}
+
+	async function checkState() {
+		const user = await checkAuthState()
+		if ( user ) {
+			$store = user
+		}
+	}
+
+	onMount(checkState)
 
 </script>
 
@@ -32,10 +41,6 @@
 
 <div class="vstack gap-3">
 
-	<div>
-		<h1><img src="img/submitty_logo.png" alt="..." height="36"> hey</h1>
-	</div>
-	
 	<div>
 		<h1 class="app-title">Submitty Extension</h1>
 	</div>
@@ -57,5 +62,4 @@
 	<div>
 		<small>{error}</small>
 	</div>
-
 </div>
